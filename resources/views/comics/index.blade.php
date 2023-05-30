@@ -18,8 +18,18 @@
           <td>{{$comic->type}}</td>
           <td>
             <a class="btn btn-success" href="{{route('comics.show', $comic->id)}}">
-                <i class="fa-solid fa-eye"></i>
+              <i class="fa-solid fa-eye"></i>
             </a>
+            <a class="btn btn-warning" href="{{route('comics.edit', $comic->id)}}">
+              <i class="fa-solid fa-pen-to-square"></i>
+            </a>
+            <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+              @csrf
+              @method('DELETE')
+              <button class="btn btn-danger">
+                <i class="fa-solid fa-trash"></i>
+              </button>
+            </form>
         </tr>
         @endforeach
     </tbody>
