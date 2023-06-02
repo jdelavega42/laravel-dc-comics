@@ -20,9 +20,31 @@
 
 </head>
 
-<body>
+<body class="text-bg-dark">
+    <header class="sticky-top bg-white shadow-lg">
+        <nav class="container navbar navbar-expand-lg">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="{{route('home')}}">
+                <img src="{{Vite::asset('resources/images/dc-logo.png')}}" alt="">
+              </a>
 
-    <main class="bg-light">
+              <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link {{Route::currentRouteName()=== 'home' ? 'active' : ''}}" aria-current="page" href="{{route('home')}}">Home</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link {{Route::currentRouteName()=== 'comics.index' ? 'active' : ''}}" href="{{route('comics.index')}}">Comics</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link {{Route::currentRouteName()=== 'comics.create' ? 'active' : ''}}" href="{{route('comics.create')}}">Create</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </nav>
+    </header>
+    <main class="container">
         @yield('content')
     </main>
 

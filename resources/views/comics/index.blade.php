@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<table class="table">
+<table class="table table-dark">
     <thead>
       <tr>
         <th scope="col">id</th>
@@ -23,7 +23,7 @@
             <a class="btn btn-warning" href="{{route('comics.edit', $comic->id)}}">
               <i class="fa-solid fa-pen-to-square"></i>
             </a>
-            <form action="{{route('comics.destroy', $comic->id)}}" method="POST">
+            <form action="{{route('comics.destroy', $comic->id)}}" method="POST" class="d-inline-block">
               @csrf
               @method('DELETE')
               <button class="btn btn-danger">
