@@ -28,7 +28,7 @@ class StoreComicRequest extends FormRequest
             'description' =>'required|min:5|max:255',
             'thumb' =>'nullable',
             'price' =>'required|min:2|max:100',
-            'date' =>'required|date',
+            'sale_date' =>'required|date',
             'type' =>'required|min:2|max:50'
         ];
     }
@@ -44,7 +44,7 @@ class StoreComicRequest extends FormRequest
             'price.required'=> 'price length error',
             'price.min'=> 'price must be at least :min characters',
             'price.max'=> 'price must be at most :max characters',
-            'date.required'=> 'date format error. Use YYYY/MM/DD format',
+            'sale_date.required'=> 'date format error',
             'type.required'=> 'type length error',
             'type.min'=> 'type must be at least :min characters',
             'type.max'=> 'type must be at most :max characters',

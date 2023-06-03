@@ -45,7 +45,7 @@ class UpdateComicRequest extends FormRequest
             'price.required'=> 'price length error',
             'price.min'=> 'price must be at least :min characters',
             'price.max'=> 'price must be at most :max characters',
-            'date.required'=> 'date format error. Use YYYY/MM/DD format',
+            // 'date.required'=> 'date format error',
             'type.required'=> 'type length error',
             'type.min'=> 'type must be at least :min characters',
             'type.max'=> 'type must be at most :max characters',

@@ -27,8 +27,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-        $data = ['title'] ;
-        return view('comics.create', compact('data'));
+        return view('comics.create');
     }
 
     /**
@@ -38,8 +37,10 @@ class ComicController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(StoreComicRequest $request)
+    // public function store(Request $request)
     {
         $data = $request->validated();
+        // $data = $request->all();
         $comic = new Comic();
         $comic->fill($data);
         $comic->save();
@@ -80,7 +81,7 @@ class ComicController extends Controller
      */
     public function update(UpdateComicRequest $request, $id)
     {
-        $data = $request->all();
+        $data = $request->validated();
         $comic = Comic::findOrFail($id);
         $comic->fill($data);
         $comic->save();

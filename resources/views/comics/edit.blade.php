@@ -11,6 +11,12 @@
 <form action="{{route('comics.update', $comic->id)}}" method="POST">
     @method("PUT")
     @csrf
+    @foreach ($data as $key=>$item)
+    <div class="mb-3">
+        <label for="title" class="form-label">title</label>
+        <input type="text" class="form-control" id="title" name="title" value="{{old('title', $comic->title)}}">
+    </div>
+    @endforeach
     <div class="mb-3">
         <label for="title" class="form-label">title</label>
         <input type="text" class="form-control" id="title" name="title" value="{{old('title', $comic->title)}}">
@@ -29,7 +35,7 @@
     </div>
     <div class="mb-3">
         <label for="sale_date" class="form-label">sale_date</label>
-        <input type="text" class="form-control" id="sale_date" name="sale_date" value="{{old('sale_date', $comic->sale_date)}}">
+        <input type="date" class="form-control" id="sale_date" name="sale_date" value="{{old('sale_date', $comic->sale_date)}}">
     </div>
     <div class="mb-3">
         <label for="type" class="form-label">type</label>
